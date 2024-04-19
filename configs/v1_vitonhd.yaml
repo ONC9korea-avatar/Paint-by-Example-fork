@@ -77,26 +77,26 @@ data:
       batch_size: 4
       wrap: False
       train:
-          target: ldm.data.open-images.OpenImageDataset
+          target: ldm.data.vitonhd.VITONHDDataset_PBE
           params:
               state: train
-              dataset_dir: dataset/open-images
-              arbitrary_mask_percent: 0.5
-              image_size: 512
-      validation:
-          target: ldm.data.open-images.OpenImageDataset
-          params:
-              state: validation
-              dataset_dir: dataset/open-images 
-              arbitrary_mask_percent: 0.5
-              image_size: 512
+              dataset_dir: dataset/VITON-HD/train
+              image_height: 512
+              image_width:  384
+      # validation:
+      #     target: ldm.data.vitonhd.VITONHDDataset_PBE
+      #     params:
+      #         state: validation
+      #         dataset_dir: dataset/VITON-HD/validation
+      #         image_height: 1024
+      #         image_width: 768
       test:
-          target: ldm.data.open-images.OpenImageDataset
+          target: ldm.data.vitonhd.VITONHDDataset_PBE
           params:
               state: test
-              dataset_dir: dataset/open-images
-              arbitrary_mask_percent: 0.5
-              image_size: 512
+              dataset_dir: dataset/VITON-HD/test
+              image_height: 512
+              image_width:  384
 
 lightning:
   trainer:

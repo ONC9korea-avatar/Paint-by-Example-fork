@@ -84,7 +84,8 @@ class OpenImageDataset(data.Dataset):
         ]
         self.bbox_path_list=[]
         if state == "train":
-            dir_name_list=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+            # dir_name_list=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+            dir_name_list = ['0']
             for dir_name in dir_name_list:
                 bbox_dir=os.path.join(args['dataset_dir'],'bbox','train_'+dir_name)
                 per_dir_file_list=os.listdir(bbox_dir)
